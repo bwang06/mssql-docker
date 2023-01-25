@@ -1,4 +1,4 @@
-FROM microsoft/windowsservercore
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 LABEL maintainer "Perry Skountrianos"
 
@@ -6,9 +6,9 @@ LABEL maintainer "Perry Skountrianos"
 ENV sql_express_download_url "https://go.microsoft.com/fwlink/?linkid=829176"
 
 ENV sa_password="_" \
-    attach_dbs="[]" \
-    ACCEPT_EULA="_" \
-    sa_password_path="C:\ProgramData\Docker\secrets\sa-password"
+        attach_dbs="[]" \
+        ACCEPT_EULA="_" \
+        sa_password_path="C:\ProgramData\Docker\secrets\sa-password"
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
